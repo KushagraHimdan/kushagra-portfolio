@@ -48,6 +48,8 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .logo{
   font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 16px;
   color: var(--text); display:flex; align-items:center; gap:8px;
+  margin-right: 20px;
+  flex-shrink: 0;
 }
 .logo .dot{ color: var(--yellow); }
 .navlinks{ display:flex; align-items:center; gap: 30px; }
@@ -76,6 +78,21 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline
 .btn-ghost:hover{ border-color: var(--accent); color: var(--accent-soft); }
 .navlinks .btn{ display:none; }
 @media(min-width:720px){ .navlinks .btn{ display:inline-flex; } }
+
+@media(max-width: 640px){
+  nav.wrap{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav.wrap::-webkit-scrollbar{ display:none; }
+  .navlinks{
+    gap: 18px;
+    flex-shrink: 0;
+  }
+  .navlinks a{ font-size: 13px; white-space: nowrap; }
+  .logo{ flex-shrink: 0; }
+}
 
 /* ---------- HERO ---------- */
 .hero{ padding: 76px 0 60px; }
